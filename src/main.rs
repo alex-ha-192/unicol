@@ -54,7 +54,7 @@ fn parse_kernel() -> (Vec<String>, Vec<char>) {
     let kernel = Command::new("uname")
         .arg("-r")
         .output()
-        .expect("`uname -r` failed!");
+        .expect("`uname -r` (getting kernel version) failed!");
 
     let kernel: String = str::from_utf8(kernel.stdout.as_slice())
         .expect("Conversion of kernel version to string failed!")
