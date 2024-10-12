@@ -1,11 +1,19 @@
 use colored::Colorize;
 use core::str;
 use rand::{rngs::ThreadRng, thread_rng, Rng};
+use std::env;
 use std::process::Command;
 
 // UNICOL - The kernel version recolourer
 
 fn main() {
+    let args: Vec<String> = env::args().collect();
+    let opt = &args[1];
+
+    if (opt == "-g" || opt == "--greet") {
+        println!("Welcome to UNICOL - the kernel version recolourer!");
+    }
+
     let mut rng = thread_rng();
 
     let (kernel_elements, kernel_separators) = parse_kernel();
