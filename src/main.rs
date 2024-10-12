@@ -8,7 +8,10 @@ use std::process::Command;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let opt = &args[1];
+    let mut opt = &String::new();
+    if args.len() >= 2 {
+        opt = &args[1];
+    }
 
     if (opt == "-g" || opt == "--greet") {
         println!("Welcome to UNICOL - the kernel version recolourer!");
