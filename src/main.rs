@@ -13,7 +13,7 @@ fn main() {
         opt = &args[1];
     }
 
-    if (opt == "-g" || opt == "--greet") {
+    if opt == "-g" || opt == "--greet" {
         println!("Welcome to UNICOL - the kernel version recolourer!");
     }
 
